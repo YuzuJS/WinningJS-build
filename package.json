@@ -1,0 +1,29 @@
+{
+    "name": "WinningJS-build",
+    "description": "A grunt build task for Windows 8 applications built on the WinningJS framework",
+    "version": "0.1.0",
+    "author": "NobleJS",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NobleJS/WinningJS-build.git"
+    },
+    "bugs": {
+        "url": "http://github.com/NobleJS/WinningJS-build/issues"
+    },
+    "directories": {
+        "lib": "./lib"
+    },
+    "main": "./lib/buildTask.js",
+    "scripts": {
+        "lint": "jshint lib --show-non-errors"
+    },
+    "dependencies": {
+        "browserify": ">= 1.13.5",
+        "jade": ">= 0.26.3",
+        "stylus": ">= 0.28.2",
+        "underscore": ">= 1.3.3"
+    },
+    "devDependencies": {
+        "jshint": ">= 0.7.1"
+    }
+}
