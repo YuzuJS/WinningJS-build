@@ -104,6 +104,7 @@ above, where all the output is put into an `out` directory and your source files
 <None Include="styles\**\*.*" />
 <None Include="lib\**\*.*" />
 <None Include="components\**\*.*" />
+<None Include="node_modules\**\*.*" />
 <Content Include="out\**\*.*" />
 ```
 
