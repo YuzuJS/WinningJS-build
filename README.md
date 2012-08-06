@@ -10,7 +10,7 @@ particular is meant to modernize the development stack. It is a simple [grunt][]
 
 * A proper module system, via [Browserify][]
 * A wonderfully modern CSS replacement with [Stylus][]
-* Concise and beautiful HTML templates with [Jade][]
+* Concise and beautiful HTML templates with [Jade][] and [Simple Jadeify][]
 
 ## How to Use
 
@@ -46,6 +46,7 @@ With these in place, you can use the build task inside your root `grunt.js` file
 "use strict";
 
 var winningJSBuild = require("WinningJS-build");
+var simpleJadeify = require("simple-jadeify");
 
 module.exports = function (grunt) {
     winningJSBuild(grunt);
@@ -59,7 +60,8 @@ module.exports = function (grunt) {
                 dest: "out/browserified",
                 aliases: {
                     "jquery": "jquery-browserify"
-                }
+                },
+                middleware: [simpleJadeify]
             },
             stylus: {
                 src: ["styles/**/*.styl", "components/**/*.styl"],
@@ -77,8 +79,8 @@ In total, this build task will:
 * [Browserify][] all modules recursively required by the `winningJS.browserify.entry` module. The results will be
   written, one file at a time (for better debugability), to the `winningJS.browserify.dest` location.
   * Browserify aliases are also supported, through the `winningJS.browserify.aliases` setting.
-  * [Jade][] templates are compiled into modules that export a template function, and also have a `.toElement()` method
-    that renders the template and returns the resulting single element.
+  * Any browserify middleware is applied; for example, the [Simple Jadeify][] middleware shown in the example above
+    compiles Jade templates into modules that export the template function.
 * Compile all [Stylus][] files specified in the `winningJS.stylus.src` setting, writing the results to the
   `winningJS.stylus.dest` location.
 * Compile a [Jade][] index file template (as shown above) into a HTML page, with all of the Browserified modules
@@ -139,5 +141,6 @@ In particular, you can see fully-configured gruntfiles and `.jsproj` files.
 [Browserify]: https://github.com/substack/node-browserify
 [Stylus]: http://learnboost.github.com/stylus/
 [Jade]: http://jade-lang.com/
+[Simple Jadeify]: https://github.com/domenic/simple-jadeify
 [grunt]: http://gruntjs.com/
 [WinningJS-todo]: https://github.com/NobleJS/WinningJS-todo
