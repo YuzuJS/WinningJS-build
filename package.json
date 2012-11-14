@@ -3,9 +3,10 @@
     "description": "A grunt build task for Windows 8 applications built on the WinningJS framework",
     "version": "0.1.0",
     "author": "NobleJS",
+    "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/NobleJS/WinningJS-build.git"
+        "url": "git://github.com/NobleJS/WinningJS-build.git"
     },
     "bugs": {
         "url": "http://github.com/NobleJS/WinningJS-build/issues"
