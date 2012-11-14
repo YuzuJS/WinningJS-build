@@ -40,49 +40,40 @@ html
 With these in place, you can use the build task inside your root `grunt.js` file, for example like so:
 
 ```js
-"use strict";
+grunt.loadNpmTasks("winningjs-build");
 
-var winningJSBuild = require("WinningJS-build");
-var simpleJadeify = require("simple-jadeify");
-
-module.exports = function (grunt) {
-    winningJSBuild(grunt);
-
-    grunt.initConfig({
-        winningJS: {
-            src: "index.jade",
-            dest: "out/index.html",
-            browserify: {
-                entry: "lib/start.js",
-                dest: "out/browserified",
-                aliases: {
-                    "jquery": "jquery-browserify"
-                },
-                middleware: [simpleJadeify]
+grunt.initConfig({
+    "WinningJS-build": {
+        src: "index.jade",
+        dest: "out/index.html",
+        browserify: {
+            entry: "lib/start.js",
+            dest: "out/browserified",
+            aliases: {
+                "jquery": "jquery-browserify"
             },
-            stylus: {
-                src: ["styles/**/*.styl", "components/**/*.styl"],
-                dest: "out/css"
-            }
+            middleware: [require("simple-jadeify")]
+        },
+        stylus: {
+            src: ["styles/**/*.styl", "components/**/*.styl"],
+            dest: "out/css"
         }
-    });
-
-    grunt.registerTask("default", "winningJS");
-};
+    }
+});
 ```
 
 In total, this build task will:
 
-* [Browserify][] all modules recursively required by the `winningJS.browserify.entry` module. The results will be
-  written, one file at a time (for better debugability), to the `winningJS.browserify.dest` location.
-  * Browserify aliases are also supported, through the `winningJS.browserify.aliases` setting.
+* [Browserify][] all modules recursively required by the `WinningJS-build.browserify.entry` module. The results will be
+  written, one file at a time (for better debugability), to the `WinningJS-build.browserify.dest` location.
+  * Browserify aliases are also supported, through the `WinningJS-build.browserify.aliases` setting.
   * Any browserify middleware is applied; for example, the [Simple Jadeify][] middleware shown in the example above
     compiles Jade templates into modules that export the template function.
-* Compile all [Stylus][] files specified in the `winningJS.stylus.src` setting, writing the results to the
-  `winningJS.stylus.dest` location.
+* Compile all [Stylus][] files specified in the `WinningJS-build.stylus.src` setting, writing the results to the
+  `WinningJS-build.stylus.dest` location.
 * Compile a [Jade][] index file template (as shown above) into a HTML page, with all of the Browserified modules
   referenced as `<script>` tags and all of the compiled Stylus files referenced as `<link>` tags. The template file and
-  resulting HTML file locations are configurable as `winningJS.src` and `winningJS.dest`, respectively.
+  resulting HTML file locations are configurable as `WinningJS-build.src` and `WinningJS-build.dest`, respectively.
 
 ## How to Use with Visual Studio
 

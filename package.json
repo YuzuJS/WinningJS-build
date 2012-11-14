@@ -1,6 +1,7 @@
 {
-    "name": "WinningJS-build",
+    "name": "winningjs-build",
     "description": "A grunt build task for Windows 8 applications built on the WinningJS framework",
+    "keywords": ["gruntplugin", "windows8", "winjs", "winningjs", "browserify", "stylus", "jade"],
     "version": "0.1.0",
     "author": "NobleJS",
     "license": "MIT",
@@ -16,7 +17,7 @@
     },
     "main": "./lib/buildTask.js",
     "scripts": {
-        "lint": "jshint lib"
+        "lint": "jshint tasks && jshint lib"
     },
     "dependencies": {
         "browserify": ">= 1.16.3 < 2",
