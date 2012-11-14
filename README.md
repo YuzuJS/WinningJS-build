@@ -15,7 +15,7 @@ particular is meant to modernize the development stack. It is a simple [grunt][]
 ## How to Use
 
 To use this build task, include `WinningJS-build` in your `package.json` and install it. Also, add an `index.jade` file
-to your project, using the template variables `scripts`, `entryModule`, and `styles`, like so:
+to your project, using the template variables `scripts` and `styles`, like so:
 
 ```jade
 html
@@ -30,9 +30,6 @@ html
 
         each script in scripts
             script(src=script)
-
-        script
-            require("#{entryModule}");
 
         each style in styles
             link(href="#{style}", rel="stylesheet")
@@ -56,7 +53,7 @@ module.exports = function (grunt) {
             src: "index.jade",
             dest: "out/index.html",
             browserify: {
-                entry: "lib/start",
+                entry: "lib/start.js",
                 dest: "out/browserified",
                 aliases: {
                     "jquery": "jquery-browserify"
