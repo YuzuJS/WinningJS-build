@@ -2,7 +2,7 @@
 
 Building Windows 8 applications with HTML5 and JavaScript is not a great experience, by default. The "WinJS" framework
 has no notion of a module system, and hasn't caught up with the latest and greatest in rapid web development. But it's
-2012: nobody wants to code JavaScript using globals and "namespaces," or hand-write their CSS, or even write out verbose
+2013: nobody wants to code JavaScript using globals and "namespaces," or hand-write their CSS, or even write out verbose
 HTML.
 
 The WinningJS framework is meant to help fix the WinJS development experience. And the WinningJS-build package in
