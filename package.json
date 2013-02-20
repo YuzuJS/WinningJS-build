@@ -1,6 +1,6 @@
 {
     "name": "winningjs-build",
-    "description": "A grunt build task for Windows 8 applications built on the WinningJS framework",
+    "description": "A Grunt build task for Windows 8 applications built on the WinningJS framework.",
     "keywords": ["gruntplugin", "windows8", "winjs", "winningjs", "browserify", "stylus", "jade"],
     "version": "0.2.0",
     "author": "NobleJS",

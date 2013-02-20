@@ -6,7 +6,7 @@ has no notion of a module system, and hasn't caught up with the latest and great
 HTML.
 
 The WinningJS framework is meant to help fix the WinJS development experience. And the WinningJS-build package in
-particular is meant to modernize the development stack. It is a simple [grunt][] build task which gives:
+particular is meant to modernize the development stack. It is a simple [Grunt][] build task which gives:
 
 * A proper module system, via [Browserify][]
 * A wonderfully modern CSS replacement with [Stylus][]
@@ -78,7 +78,7 @@ In total, this build task will:
 ## How to Use with Visual Studio
 
 Although more work will eventually be done in this area, to automate this process, for now you can manually integrate
-grunt and WinningJS-build into your Visual Studio project. This causes the above build steps to be run when using
+Grunt and WinningJS-build into your Visual Studio project. This causes the above build steps to be run when using
 Visual Studio's *Build* task.
 
 Open your `.jsproj` file for editing (e.g. in Notepad). Assuming you have a `grunt.js` gruntfile similar to the one
@@ -131,5 +131,5 @@ In particular, you can see fully-configured gruntfiles and `.jsproj` files.
 [Stylus]: http://learnboost.github.com/stylus/
 [Jade]: http://jade-lang.com/
 [Simple Jadeify]: https://github.com/domenic/simple-jadeify
-[grunt]: http://gruntjs.com/
+[Grunt]: http://gruntjs.com/
 [WinningJS-todo]: https://github.com/NobleJS/WinningJS-todo
