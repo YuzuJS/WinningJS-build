@@ -14,7 +14,7 @@ particular is meant to modernize the development stack. It is a simple [Grunt][]
 
 ## How to Use
 
-To use this build task, include `WinningJS-build` in your `package.json` and install it. Also, add an `index.jade` file
+To use this build task, include `"winningjs-build"` in your `package.json` and install it. Also, add an `index.jade` file
 to your project, using the template variables `scripts` and `styles`, like so:
 
 ```jade
