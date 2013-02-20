@@ -24,9 +24,9 @@ html
         title My Awesome Windows 8 App
 
         //- WinJS references
-        link(href="//Microsoft.WinJS.1.0.RC/css/ui-dark.css", rel="stylesheet")
-        script(src="//Microsoft.WinJS.1.0.RC/js/base.js")
-        script(src="//Microsoft.WinJS.1.0.RC/js/ui.js")
+        link(href="//Microsoft.WinJS.1.0/css/ui-dark.css", rel="stylesheet")
+        script(src="//Microsoft.WinJS.1.0/js/base.js")
+        script(src="//Microsoft.WinJS.1.0/js/ui.js")
 
         each script in scripts
             script(src=script)
